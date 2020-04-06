@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import UserList from "./UserList";
+// PossibleSolution1 goes 1 level below MovieCard to a UserList component
 
 class MovieCard extends Component {
   render() {
@@ -15,6 +16,7 @@ class MovieCard extends Component {
       <li key={movieInfo.id}>
         <h2>{movieInfo.name}</h2>
         <h3>Liked By:</h3>
+        {/* PossibleSolution1 goes 1 level below MovieCard to a UserList component */}
         <UserList usersWhoLikedMovie={usersWhoLikedMovie} users={users} />
       </li>
     );
