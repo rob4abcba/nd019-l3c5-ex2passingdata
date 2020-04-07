@@ -120,13 +120,16 @@ class App extends Component {
   component's props changes.
   */
   render() {
+    console.log("PossibleSolution2: Add prop.profiles to send down to Dashboard.js");
     return (
       <div>
         <header className="App-header">
-          <h1 className="App-title">ReactND - Coding Practice</h1>
+          <h1 className="App-title">nd019 L3C5 Ex2PassingData</h1>
+          <h2>PossibleSolution2</h2>
         </header>
         <h2>How Popular is Your Favorite Movie?</h2>
         <Dashboard
+          profiles={profiles}
           usersByMovie={this.usersByMovie}
           movies={movies}
           users={users}
