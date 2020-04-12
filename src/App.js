@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./App.css";
 import Dashboard from "./Dashboard";
 
+/*
+Display a list of movies where each movie contains a list of users that favorited it.
+For detailed instructions, refer to instructions.md.
+*/
+
 const profiles = [
   {
     id: 1,
@@ -97,20 +102,21 @@ class App extends Component {
   (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). The
   Component's constructor is the first thing that runs when the object is created.
   */
+
+  //MC: constructor reflects INITIAL state of your app
   constructor(props) {
     super(props);
     this.usersByMovie = {};
-
-    /*
-    We can map the users by the movie they liked.
+    /* 
+    map the users by the movie they liked.
     */
     profiles.forEach(profile => {
-      const movieID = profile.favoriteMovieID;
-
+      const movieID = profile.favoriteMovieID; //MC: Notice profile(item) not profiles(full array)
+      //MC: Have to use "this" keyword before usersByMovie (i.e. this.usersByMovie[movieID]
       if (this.usersByMovie[movieID]) {
-        this.usersByMovie[movieID].push(profile.userID);
+        this.usersByMovie[movieID].push(profile.userID); //MC: Notice profile.userID not users[movieID].name
       } else {
-        this.usersByMovie[movieID] = [profile.userID];
+        this.usersByMovie[movieID] = [profile.userID]; //MC: Notice array [profile.userID] not string users[movieID].name
       }
     });
   }
